@@ -1,0 +1,44 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+/*Michael's CSS*/
+.link-background-color {
+  background-color: #DF3926;
+}
+
+.logo {
+  max-height:50px;
+}
+
+.team_name {
+  background-color:#DF3926;
+  color:white;
+  float:right;
+  text-transform: uppercase;
+  padding:4px 2px;
+  font-weight:400;
+}
+span .team_raised {
+  color:#DF3926;
+  background-color:#ffffff;
+  /*float:right;*/
+  font-size:14px;
+  padding:2px;
+}
+
+#pointers_map{
+  height:400px;
+
+}
