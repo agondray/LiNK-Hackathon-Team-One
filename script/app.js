@@ -4,12 +4,11 @@ myApp.config(function ($routeProvider){
 
     $routeProvider
     .when('/', {
-        templateUrl: 'partials/main.html',
-        controller: 'mainController'
+        templateUrl: 'partials/main.html'
     })
     .when('/team', {
-        templateUrl: 'partials/team.html',
-        contoller: 'teamController'
-    });
+        templateUrl: 'partials/team.html'
+    })
+    .otherwise({redirectTo:'/'});
 
 });
