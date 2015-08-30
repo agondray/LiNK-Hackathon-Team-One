@@ -18,8 +18,22 @@ ul {
 }
 li {
   list-style-type: none;
-
-
+}
+h5 {
+  font-family: "futura-pt", arial, sans-serif;
+  font: 16px/17px "futura-pt", Arial, Helvetica;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: #414042;
+    font-style: normal;
+    font-size: 20pt;
+    line-height: 32px;
+}
+p {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 24px;
 }
 .row
 {
@@ -31,10 +45,17 @@ li {
   overflow-y: auto;
   border: 1px solid silver;
 }
+.newsfeed li {
+  margin: 15px 0;
+}
 .newsfeed a {
   color: #d12a18;
 }
-
+.newsfeed p {
+  font-style: italic;
+  font-size: 0.85em;
+  display: inline-block;
+}
 /*Michael's CSS*/
 .link-background-color {
   background-color: #DF3926;
@@ -99,5 +120,14 @@ span .team_raised {
   opacity: 0.9;
   position:relative;
   top:-50px;
+}
+
+/* J.V.'s CSS */
+.nav-wrapper {
+  padding: 0em 1em;
+}
+
+#dropdown-content {
+  display: none;
 }
 
