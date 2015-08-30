@@ -156,7 +156,7 @@
       title: 'SJSU LINK',
       icon:'../assets/green-dot.png',
       infoWindow: {
-        content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p>Website: <a href="www.sjsu.com">www.sjsu-link.com</a>'
+        content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p><a href="#/team">Team SJSU</a>'
       }
     });
     map.addMarker({
@@ -191,20 +191,19 @@
       console.log("hello");
     })
 
-    // $(".locate").click(function() {
-    //   console.log("working");
-    //   var lon = $(this).attr("lon");
-    //   var lat = $(this).attr("lat");
-    //   console.log(lon)
-    //   map.setCenter(lat, lon);
-    // });
-    // $("#locate").click(function() {
-    //   map.setCenter(30.291698, -97.737750);
-    // });
+    $("img .locate").click(function() {
+      console.log("working");
+      var lon = $("this").attr("lon");
+      var lat = $(this).attr("lat");
+      console.log(lon)
+      map.setCenter(lat, lon);
+    });
+    $("#locate").click(function() {
+      map.setCenter(30.291698, -97.737750);
+    });
 });
-
-
 </script>
+
 <div ng-controller="mainController">
   <nav class="link-background-color" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#/" class="brand-logo">LINK</a>
