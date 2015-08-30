@@ -1,0 +1,186 @@
+<script>
+
+  $(document).ready(function(){
+ var map = new GMaps({
+    el: '#pointers_map',
+    lat: 37.376818,
+    lng: -121.912378,
+    zoom: 10,
+    zoomControl : true,
+    zoomControlOpt: {
+        style : 'SMALL',
+        position: 'TOP_LEFT'
+    },
+    panControl : false,
+  });
+    map.addMarker({
+      lat: 37.376818,
+      lng: -121.912378,
+      title: 'CodingDojo LINK',
+      icon:'../assets/red-dot.png',
+      infoWindow: {
+        content: '<img class="logo" src="http://cdn.skilledup.com/wp-content/uploads/2015/01/Coding-Dogo-logo.jpg"><span class="team_name">CodingDojo Link<br>Raised <span class="team_raised">$280</span></span><p>Contact: Michael Choi</p><p>Email: mchoi@codingdojo.com</p><p>Website: <a href="www.codingdojo.com">www.codingdojo.com</a>'
+      }
+    });
+
+    map.addMarker({
+      lat: 37.334906,
+      lng: -121.884552,
+      title: 'SJSU LINK',
+      icon:'../assets/blue-dot.png',
+      infoWindow: {
+        content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p>Website: <a href="www.sjsu.com">www.sjsu-link.com</a>'
+      }
+    });
+    map.addMarker({
+      lat: 37.428264,
+      lng: -122.168845,
+      title: 'Stanford LINK',
+      icon:'../assets/green-dot.png',
+      infoWindow: {
+        content: '<img class="logo" src="https://yt3.ggpht.com/-Y8D6Fg-k6qc/AAAAAAAAAAI/AAAAAAAAAAA/9lU8yzk8H14/s900-c-k-no/photo.jpg"><span class="team_name">Stanford Link<br>Raised <span class="team_raised">$5,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@stanford.edu</p><p>Website: <a href="www.sjsu.com">www.stanford-link.com</a>'
+      }
+    });
+    map.addMarker({
+      lat: 37.241854,
+      lng: -121.921446,
+      title: 'Leigh HS LINK',
+      icon:'../assets/red-dot.png',
+      infoWindow: {
+        content: '<img class="logo" src="http://images.maxpreps.com.edgesuite.net/Mascot/AAAAAAAAAAAAAAAAAAAAAA/6GJmve6iykWw6N0D3sAFyQ/1,210,89/1423252879_leigh_longhorns.gif"><span class="team_name">Leigh HS Link<br>Raised <span class="team_raised">$600</span></span><p>Contact: John Doe</p><p>Email: johndoe@gmail.com</p><p>Website: <a href="www.sjsu.com">www.leigh-hs-link.com</a>'
+      }
+    });
+    map.addMarker({
+      lat: 30.291698,
+      lng: -97.737750,
+      title: 'UT Austin LINK',
+      icon:'../assets/green-dot.png',
+      infoWindow: {
+        content: '<img class="logo" src="https://www.utexas.edu/sites/default/files/images/Trademarked_Silhouette2.jpg"><span class="team_name">UT Austin Link<br>Raised <span class="team_raised">$10,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@utaustin.edu</p><p>Website: <a href="www.sjsu.com">www.utaustin-link.com</a>'
+      }
+    });
+});
+</script>
+<div ng-controller="mainController">
+  <nav class="link-background-color" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#/" class="brand-logo">LINK</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Liberty in North Korea</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Map of LINK Rescue Teams</h5>
+      </div>
+      <div class="row center">
+        <div class="col s8">
+          <div id="pointers_map"></div>
+        </div>
+        <div class="col s4 newsfeed">
+            
+              <ul >
+                <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a> - {{ story.date }} <p></p></li>
+              </ul>
+              
+           
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col s3">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Start a Rescue Team</a>
+        </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container" ng-controller="mainController">
+    <div class="section">
+      <!-- newsfeed -->
+      
+     
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer red darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Liberty in North Korea Bio</h5>
+          <p class="grey-text text-lighten-4">Liberty in North Korea (LiNK) is the only full-time grassroots organization in North America devoted to the North Korean human rights and humanitarian crises. LiNK provides protection and aid to North Korean refugees hiding in China and, utilizing a modern-day underground railroad through Southeast Asia, rescues refugees and helps them to reach freedom. LiNKâ€™s global grassroots movement works to redefine public perception on North Korea, shifting attention away from the politics and onto the people, and provides a way for concerned citizens to come alongside the North Korean people and help bring about positive change. LiNK also works to develop people-focused strategies that will have the potential to promote change inside North Korea in the long term.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      LINK
+      </div>
+    </div>
+  </footer>
+</div>
+
