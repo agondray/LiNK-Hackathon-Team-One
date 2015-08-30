@@ -94,3 +94,12 @@ span .team_raised {
   top:-50px;
 }
 
+/* J.V.'s CSS */
+.nav-wrapper {
+  padding: 0em 1em;
+}
+
+#dropdown-content {
+  display: none;
+}
+

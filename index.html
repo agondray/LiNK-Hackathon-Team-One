@@ -17,12 +17,112 @@
      <script src="script/app.js"></script>
      <script src="script/main.js"></script>
      <script src="script/team.js"></script>
+     <script src="script/nav.js"></script>
+     <script src="script/login.js"></script>
      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
      <script src="script/gmaps.js"></script>
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div ng-view=""></div>
+
+    <!-- Navigation -->
+
+    <nav class="link-background-color" role="navigation" ng-controller='memberController'>
+        <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo left">LiNK</a>
+            <ul class="right hide-on-med-and-down right">
+                <li>
+                    <a id="dropdown-login" href="#/">Member Login</a>
+                    <ul id="login-form">
+                        <li>
+                            <input type="text" ng-model="memberLogin.username" placeholder="Username">
+                            <input type="password" ng-model="memberLogin.password" placeholder="Password">
+                            <button class="waves-effect waves-light btn" ng-click="login()">Login</button>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#/">Home</a>
+                </li>
+            </ul>
+
+            <!-- <ul id="nav-mobile" class="side-nav">
+                <li>
+                    <a href="#">mobile link</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> -->
+        </div>
+    </nav>
+
+    <!-- End Navigation -->
+
+    <!-- Partials -->
+
+    <ng-view></ng-view
+
+    <!-- End Partials -->
+
+    <!-- Footer -->
+
+    <footer class="page-footer red darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Liberty in North Korea</h5>
+                    <p class="grey-text text-lighten-4">
+                        Liberty in North Korea (LiNK) is the only full-time grassroots organization in North America devoted to the North Korean human rights and humanitarian crises. LiNK provides protection and aid to North Korean refugees hiding in China and, utilizing a modern-day underground railroad through Southeast Asia, rescues refugees and helps them to reach freedom. LiNKâ€™s global grassroots movement works to redefine public perception on North Korea, shifting attention away from the politics and onto the people, and provides a way for concerned citizens to come alongside the North Korean people and help bring about positive change. LiNK also works to develop people-focused strategies that will have the potential to promote change inside North Korea in the long term.
+                    </p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">About</h5>
+                    <ul>
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/our-team/" target="_blank">Our Team</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/rescue-refugees/" target="_blank">Refugee Rescues</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/resettlement-assistance/" target="_blank">Resettlement Assistance</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/empowerment-programs/" target="_blank">Empowerment Programs</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/financials/" target="_blank">Financials</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/blog/" target="_blank">Blog</a>
+                        </li>                        
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/events/" target="_blank">Get Involved</a>
+                        </li> 
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/donate/" target="_blank">Donate</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="http://shop.libertyinnorthkorea.org/" target="_blank">Shop</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="http://www.libertyinnorthkorea.org/contact/" target="_blank">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <!-- copyright here  -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
 </body>
 </html>
 
