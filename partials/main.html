@@ -61,9 +61,9 @@
     });
 });
 </script>
-
+<div ng-controller="mainController">
   <nav class="link-background-color" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">LINK</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#/" class="brand-logo">LINK</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -82,7 +82,17 @@
         <h5 class="header col s12 light">Map of LINK Rescue Teams</h5>
       </div>
       <div class="row center">
-        <div id="pointers_map"></div>
+        <div class="col s8">
+          <div id="pointers_map"></div>
+        </div>
+        <div class="col s4 newsfeed">
+            
+              <ul >
+                <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a> - {{ story.date }} <p></p></li>
+              </ul>
+              
+           
+        </div>
 
       </div>
       <div class="row">
@@ -95,10 +105,11 @@
   </div>
 
 
-  <div class="container">
+  <div class="container" ng-controller="mainController">
     <div class="section">
-
-      <!--   Icon Section   -->
+      <!-- newsfeed -->
+      
+     
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
@@ -171,5 +182,5 @@
       </div>
     </div>
   </footer>
-
+</div>
 

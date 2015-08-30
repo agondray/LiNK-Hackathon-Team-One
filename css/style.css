@@ -12,6 +12,22 @@
 .icon-block .material-icons {
   font-size: inherit;
 }
+ul {
+  padding-left: 0;
+  text-align: left;
+}
+li {
+  list-style-type: none;
+
+
+}
+
+.newsfeed {
+  padding-left: 0;
+  height: 400px;
+  overflow-y: auto;
+
+}
 
 /*Michael's CSS*/
 .link-background-color {
