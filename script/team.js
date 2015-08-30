@@ -1,9 +1,18 @@
 myApp.factory('teamFactory', function (){
 	factory = {}
-	// chatlog = [{name:, content:, comments: }];
-	// factory.teamChat = function() {
 
-	// } 
+	messageboard = [{name:"Jae Hong is FAbulous", title:"Hello. This is a content from the factory.", date: new Date(), post:"Objects of this message came from the factory, but you can hook up your backend and database easily to create a wonderful messageboard/bulletinboard!"}];
+	member = [{name: "Jason Jones" , image: "student1.png"},
+	{name: "Roy Hugh" , image: "student2.jpg"},
+	{name: "Jessica Palmer" , image: "student 4.jpg"},
+	{name: "Lory Park" , image: "student 5.jpg"}
+
+	]
+	activities = [
+	{activity: "Fundraiser", image: "assets/activity1.jpg"},
+   	{activity: "Group Photo Session", image: "assets/activity2.jpg"}
+	]
+
 
 	factory.teams = [
 		{
@@ -63,13 +72,27 @@ myApp.factory('teamFactory', function (){
 	]
 
 	messageboard = [{name:"Rod", title:"Upcoming Activity", date: new Date(), post:"The upcoming event should be great!"}];
+
 	factory.teamChat = function(callback) {
 		callback(messageboard);
 	}; 
 	factory.addChat = function(message){
 		messageboard.push(message);
-	};
+
+	}
+
+	factory.teamPics = function(callback){
+		callback(member);
+	}
+
+	factory.activityPics = function(callback){
+		callback(activities);
+	}
+
+	
+
 	return factory;
+
 });
 
 myApp.controller('teamController', function ($scope, teamFactory){
@@ -86,11 +109,28 @@ myApp.controller('teamController', function ($scope, teamFactory){
 	$scope.load();
 
 	messageboard();
+	
 	function messageboard() {
 		teamFactory.teamChat(function(data){
 			$scope.messages = data;
 		});
 	}
+
+	teamPics();
+	function teamPics(){
+		teamFactory.teamPics(function(data){
+			$scope.teampics = data;
+
+		})
+	}
+
+	activityPics();
+	function activityPics(){
+		teamFactory.activityPics(function(data){
+			$scope.activitypics = data;
+		})
+	}
+	console.log("Woof");
 
 	$scope.addMessage = function() {
 		var newdate = new Date();

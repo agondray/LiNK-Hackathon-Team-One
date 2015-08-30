@@ -46,6 +46,17 @@
     padding: 10px;
 }
 
+.lean{
+    text-align: left;
+}
+.eventsize{
+    width: 458px;
+    height: 283px;
+}
+.membersize{
+    width: 275px;
+    height: 183px;
+}
 .team-summary{
     
     padding-bottom: 55px;
