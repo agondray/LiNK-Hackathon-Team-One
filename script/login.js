@@ -1,89 +1,89 @@
 // Dummy login factory and controller by J.V. //
 
-describe("Unit testing jquery directive", function() {
-      var $compile, $scope, element;
-      $scope = element = $compile = void 0;
+// describe("Unit testing jquery directive", function() {
+//       var $compile, $scope, element;
+//       $scope = element = $compile = void 0;
 
-      // Load the module, which contains the directive
-      beforeEach(module("jqueryDirectives"));
+//       // Load the module, which contains the directive
+//       beforeEach(module("jqueryDirectives"));
 
-      // Store references to $rootScope and $compile so they are available to all tests in this describe block
-      beforeEach(inject(function(_$compile_, _$rootScope_) {
+//       // Store references to $rootScope and $compile so they are available to all tests in this describe block
+//       beforeEach(inject(function(_$compile_, _$rootScope_) {
 
-        // The injector unwraps the underscores (_) from around the parameter names when matching
-        $scope = _$rootScope_;
-        return $compile = _$compile_;
+//         // The injector unwraps the underscores (_) from around the parameter names when matching
+//         $scope = _$rootScope_;
+//         return $compile = _$compile_;
 
-      }));
+//       }));
 
-      it("should slide Down a block", function() {
+//       it("should slide Down a block", function() {
 
-        // Create html fragment
-        element = angular.element('<div class="form" data-my-slide="showForm">Text</div>');
+//         // Create html fragment
+//         element = angular.element('<div class="form" data-my-slide="showForm">Text</div>');
 
-        // Set variable
-        $scope.showForm = true;
+//         // Set variable
+//         $scope.showForm = true;
 
-        // Compile a piece of HTML containing the directive
-        $compile(element)($scope);
-        $scope.$digest();
+//         // Compile a piece of HTML containing the directive
+//         $compile(element)($scope);
+//         $scope.$digest();
 
-        // Set expectation
-        return expect(element.css('height')).toBe('1px');
-      });
+//         // Set expectation
+//         return expect(element.css('height')).toBe('1px');
+//       });
 
-      it("should slide Up a block", function() {
+//       it("should slide Up a block", function() {
 
-        // Create html fragment
-        element = angular.element('<div class="form" data-my-slide="showForm">Text</div>');
+//         // Create html fragment
+//         element = angular.element('<div class="form" data-my-slide="showForm">Text</div>');
 
-        // Set variable
-        $scope.showForm = false;
+//         // Set variable
+//         $scope.showForm = false;
 
-        // Compile a piece of HTML containing the directive
-        $compile(element)($scope);
-        $scope.$digest();
+//         // Compile a piece of HTML containing the directive
+//         $compile(element)($scope);
+//         $scope.$digest();
 
-        // Set expectation
-        return expect(element.css('height')).toBe('0px');
-      });
+//         // Set expectation
+//         return expect(element.css('height')).toBe('0px');
+//       });
 
-    });
+//     });
 
-// Here we create a module to group these directives jquery related
-    var jqueryDirectives = angular.module("jqueryDirectives", []);
+// // Here we create a module to group these directives jquery related
+//     var jqueryDirectives = angular.module("jqueryDirectives", []);
 
-    // Here we add a directive to the module. camelCase naming in this file (mySlide) and dash separated in html (my-Slide)
-    jqueryDirectives.directive("userLoggedIn", [
-      function() {
-        return {
+//     // Here we add a directive to the module. camelCase naming in this file (mySlide) and dash separated in html (my-Slide)
+//     jqueryDirectives.directive("userLoggedIn", [
+//       function() {
+//         return {
 
-          // This means the directive can be used as an attribute only. Example <div data-my-slide="variable"> </div>
-          restrict: "A",
+//           // This means the directive can be used as an attribute only. Example <div data-my-slide="variable"> </div>
+//           restrict: "A",
 
-          // This is the functions that gets executed after Angular has compiled the html
-          link: function(scope, element, attrs) {
+//           // This is the functions that gets executed after Angular has compiled the html
+//           link: function(scope, element, attrs) {
 
-            // We dont want to abuse on watch but here it is critical to determine if the parameter has changed.
-            scope.$watch(attrs.mySlide, function(newValue, oldValue) {
+//             // We dont want to abuse on watch but here it is critical to determine if the parameter has changed.
+//             scope.$watch(attrs.mySlide, function(newValue, oldValue) {
 
-              // This is our logic. If parameter is true slideDown otherwise slideUp.
-              // TODO: This should be transformed into css transition or angular animator if IE family supports it
-              if (newValue) {
-                return element.slideDown();
-              } else {
-                return element.slideUp();
-              }
-            });
+//               // This is our logic. If parameter is true slideDown otherwise slideUp.
+//               // TODO: This should be transformed into css transition or angular animator if IE family supports it
+//               if (newValue) {
+//                 return element.slideDown();
+//               } else {
+//                 return element.slideUp();
+//               }
+//             });
 
-            if ($scope.loggedIn == true) {
-            	loginForm.hide();
-            	loggedinUser.show();
-            }
-          }
-        };
-      }
-    ]);
+//             if ($scope.loggedIn == true) {
+//             	loginForm.hide();
+//             	loggedinUser.show();
+//             }
+//           }
+//         };
+//       }
+//     ]);
 
 
 
