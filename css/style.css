@@ -1,0 +1,96 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+ul {
+  padding-left: 0;
+  text-align: left;
+}
+li {
+  list-style-type: none;
+
+
+}
+
+.newsfeed {
+  padding-left: 0;
+  height: 400px;
+  overflow-y: auto;
+
+}
+
+/*Michael's CSS*/
+.link-background-color {
+  background-color: #DF3926;
+}
+.legend {
+  position:relative;
+  left:10px;
+}
+.funding_legend_red {
+  background-color: #FD7567;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
+.funding_legend_yellow {
+  background-color: #fdf569;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
+.funding_legend_green {
+  background-color: #00E64D;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
+.funding_legend_blue {
+  background-color: #6992FD;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
+.logo {
+  max-height:50px;
+}
+.locate_pin {
+  max-width:25px;
+
+}
+.team_name {
+  background-color:#DF3926;
+  color:white;
+  float:right;
+  text-transform: uppercase;
+  padding:4px 2px;
+  font-weight:400;
+}
+span .team_raised {
+  color:#DF3926;
+  background-color:#ffffff;
+  /*float:right;*/
+  font-size:14px;
+  padding:2px;
+}
+
+#pointers_map {
+  height:400px;
+}
+.funding_legend {
+  background-color: #DF3926;
+  opacity: 0.9;
+  position:relative;
+  top:-50px;
+}
+
