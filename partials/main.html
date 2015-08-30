@@ -54,7 +54,7 @@
                 }
               },
               title: {
-                text: 'USD',
+                text: 'funds raised (USD)',
                 style: {
                   color: chartColors['black']
                 }
@@ -70,7 +70,7 @@
                 }
               },
               title: {
-                text: 'refugees',
+                text: 'refugees rescued',
                 style: {
                   color: chartColors['red']
                 }
@@ -101,7 +101,7 @@
               color: chartColors['black']
         }, {
             yAxis: 1,
-            name: 'refugee rescues',
+            name: 'refugees rescued',
             data: [17, 23, 25],
               color: chartColors['red']
         }]
@@ -238,10 +238,11 @@
 
 
       <div class="row center">
-        <h5 class="header col s12 light">Map of LINK Rescue Teams</h5>
+        <h5 class="header col s8 light">Nearby Rescue Teams</h5>
+        <h5 class="header col s4 light">Blog</h5>
       </div>
       <div class="row center">
-        <div class="col s9">
+        <div class="col s8">
           <div id="pointers_map">
           </div>
           <div class="row legend">
@@ -251,7 +252,7 @@
             <span class="col s2 funding_legend_blue">$5000+</span>
           </div>
         </div>
-        <div class="col s3 newsfeed">
+        <div class="col s4 newsfeed">
             
               <ul >
                 <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a>
@@ -260,7 +261,7 @@
                       <a class="locate" lat="{{ story.lat }}" lon="{{ story.lon }}" href="#/"><img class="locate_pin locate" lat="{{ story.lat }}" lon="{{ story.lon }}" src="../assets/locate_pin.png"></a>
                     </div>
                     <div class="col 10">
-                      {{story.group}} <br>{{ story.date }} <p></p>
+                      <em>{{story.group}}, {{ story.date }}</em>
                     </div>
                   </div>
 
