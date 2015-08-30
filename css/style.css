@@ -21,12 +21,18 @@ li {
 
 
 }
-
+.row
+{
+  text-align: left;
+}
 .newsfeed {
   padding-left: 0;
   height: 400px;
   overflow-y: auto;
-
+  border: 1px solid silver;
+}
+.newsfeed a {
+  color: #d12a18;
 }
 
 /*Michael's CSS*/
@@ -86,6 +92,7 @@ span .team_raised {
 
 #pointers_map {
   height:400px;
+  border: 1px solid silver;
 }
 .funding_legend {
   background-color: #DF3926;

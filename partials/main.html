@@ -1,4 +1,116 @@
 <script>
+    var chartColors = {red:'#d12a18',black:'#000000'};
+    $(function () {
+        $('#members').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Worldwide Rescue Teams'
+            },
+            xAxis: {
+                categories: ['U.S.A.', 'South Korea', 'Japan', 'U.K.', 'others']
+            },
+            yAxis: {
+                title: {
+                    text: 'team count'
+                }
+            },
+            series: [{
+                showInLegend: false,
+                name: 'team count',
+                data: [89, 52, 38, 35, 56]
+            }],
+            plotOptions: {
+              series: {
+                color: '#d12a18'
+              }
+            }
+        });
+    }); 
+
+    $(function () {
+    $('#money').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Global Progress'
+        },
+        xAxis: {
+            title: {
+                text: 'year'
+            },
+            categories: ['2013', '2014', '2015']
+        },
+        yAxis: [
+            { // primary yAxis
+              min: 0,
+              max: 300,
+              labels: {
+                format: '${value}k',                
+                style: {
+                  color: chartColors['black']
+                }
+              },
+              title: {
+                text: 'funds raised (USD)',
+                style: {
+                  color: chartColors['black']
+                }
+              }
+            }, 
+            { // secondary yAxis
+              min: 0,
+              max: 100,
+              labels: {
+                format: '{value}',
+                style: {
+                  color: chartColors['red']
+                }
+              },
+              title: {
+                text: 'refugees rescued',
+                style: {
+                  color: chartColors['red']
+                }
+              },
+              opposite: true
+            }
+        ],
+        tooltip: {
+          shared: true
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'left',
+          x: 75,
+          verticalAlign: 'top',
+          y: 30,
+          floating: true
+        },
+        series: [
+        {
+            yAxis: 0,
+            name: 'funds raised',
+            data: [179, 224, 248],
+            tooltip: {
+              valuePrefix: '$',
+              valueSuffix: 'k'
+            },
+              color: chartColors['black']
+        }, {
+            yAxis: 1,
+            name: 'refugees rescued',
+            data: [17, 23, 25],
+              color: chartColors['red']
+        }]
+    });
+}); 
+
+</script>
+
+<script>
 
   $(document).ready(function(){
  var map = new GMaps({
@@ -44,7 +156,7 @@
       title: 'SJSU LINK',
       icon:'../assets/green-dot.png',
       infoWindow: {
-        content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p>Website: <a href="www.sjsu.com">www.sjsu-link.com</a>'
+        content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p><a href="#/team">Team SJSU</a>'
       }
     });
     map.addMarker({
@@ -79,30 +191,46 @@
       console.log("hello");
     })
 
-    // $(".locate").click(function() {
-    //   console.log("working");
-    //   var lon = $(this).attr("lon");
-    //   var lat = $(this).attr("lat");
-    //   console.log(lon)
-    //   map.setCenter(lat, lon);
-    // });
-    // $("#locate").click(function() {
-    //   map.setCenter(30.291698, -97.737750);
-    // });
+    $("img .locate").click(function() {
+      console.log("working");
+      var lon = $("this").attr("lon");
+      var lat = $(this).attr("lat");
+      console.log(lon)
+      map.setCenter(lat, lon);
+    });
+    $("#locate").click(function() {
+      map.setCenter(30.291698, -97.737750);
+    });
 });
-
-
 </script>
+
 <div ng-controller="mainController">
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Liberty in North Korea</h1>
+      <!-- <h1 class="header center orange-text">Liberty in North Korea</h1> -->
+
+    <div class="row center">
+        <div class="col s3">
+          <img src="./assets/link-logo.png" alt="LiNK logo" height="100px" width="100px">
+          <p>We have rescue teams organized all over the World. Find one near you or start your own!</p>
+        </div>
+        <div class="col s4">
+            <div id="members" style="width:100%; height:300px;"></div>
+        </div>
+        <div class="col s4">
+            <div id="money" style="width:100%; height:300px;"></div>
+        </div>
+    </div>
+
+
+
       <div class="row center">
-        <h5 class="header col s12 light">Map of LINK Rescue Teams</h5>
+        <h5 class="header col s8 light">Nearby Rescue Teams</h5>
+        <h5 class="header col s4 light">Blog</h5>
       </div>
       <div class="row center">
-        <div class="col s9">
+        <div class="col s8">
           <div id="pointers_map">
           </div>
           <div class="row legend">
@@ -112,7 +240,7 @@
             <span class="col s2 funding_legend_blue">$5000+</span>
           </div>
         </div>
-        <div class="col s3 newsfeed">
+        <div class="col s4 newsfeed">
             
               <ul >
                 <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a>
@@ -121,7 +249,7 @@
                       <a class="locate" lat="{{ story.lat }}" lon="{{ story.lon }}" href="#/"><img class="locate_pin locate" lat="{{ story.lat }}" lon="{{ story.lon }}" src="../assets/locate_pin.png"></a>
                     </div>
                     <div class="col 10">
-                      {{story.group}} <br>{{ story.date }} <p></p>
+                      <em>{{story.group}}, {{ story.date }}</em>
                     </div>
                   </div>
 
