@@ -21,7 +21,10 @@ li {
 
 
 }
-
+.row
+{
+  text-align: left;
+}
 .newsfeed {
   padding-left: 0;
   height: 400px;
