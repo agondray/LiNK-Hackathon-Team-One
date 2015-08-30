@@ -79,21 +79,21 @@
       console.log("hello");
     })
 
-    // $(".locate").click(function() {
-    //   console.log("working");
-    //   var lon = $(this).attr("lon");
-    //   var lat = $(this).attr("lat");
-    //   console.log(lon)
-    //   map.setCenter(lat, lon);
-    // });
-    // $("#locate").click(function() {
-    //   map.setCenter(30.291698, -97.737750);
-    // });
+    $("img .locate").click(function() {
+      console.log("working");
+      var lon = $("this").attr("lon");
+      var lat = $(this).attr("lat");
+      console.log(lon)
+      map.setCenter(lat, lon);
+    });
+    $("#locate").click(function() {
+      map.setCenter(30.291698, -97.737750);
+    });
 });
 
 
 </script>
-<div>
+<div ng-controller="mainController">
   <nav class="link-background-color" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#/" class="brand-logo">LINK</a>
       <ul class="right hide-on-med-and-down">
