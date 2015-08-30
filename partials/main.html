@@ -13,6 +13,7 @@
     },
     panControl : false,
   });
+
    GMaps.geolocate({
     success: function(position){
       map.setCenter(position.coords.latitude, position.coords.longitude);
@@ -73,21 +74,28 @@
         content: '<img class="logo" src="https://www.utexas.edu/sites/default/files/images/Trademarked_Silhouette2.jpg"><span class="team_name">UT Austin Link<br>Raised <span class="team_raised">$10,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@utaustin.edu</p><p>Website: <a href="www.sjsu.com">www.utaustin-link.com</a>'
       }
     });
-    $("#locate").click(function() {
-      map.setCenter(30.291698, -97.737750);
-      $pointer = $("div[title='UT']").trigger("click");
-      $pointer[0].click();
-      google.maps.event.trigger(marker, 'click', {
-  latLng: new google.maps.LatLng(30.291698, -97.737750)
-});
+
+    $(".locate").on('click', function() {
+      console.log("hello");
     })
+
+    // $(".locate").click(function() {
+    //   console.log("working");
+    //   var lon = $(this).attr("lon");
+    //   var lat = $(this).attr("lat");
+    //   console.log(lon)
+    //   map.setCenter(lat, lon);
+    // });
+    // $("#locate").click(function() {
+    //   map.setCenter(30.291698, -97.737750);
+    // });
 });
 
 
 </script>
-
+<div ng-controller="mainController">
   <nav class="link-background-color" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">LINK</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#/" class="brand-logo">LINK</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -106,16 +114,34 @@
         <h5 class="header col s12 light">Map of LINK Rescue Teams</h5>
       </div>
       <div class="row center">
-        <div id="pointers_map">
+        <div class="col s9">
+          <div id="pointers_map">
+          </div>
+          <div class="row legend">
+            <span class="col s2 funding_legend_red">$0-500</span>
+            <span class="col s2 funding_legend_yellow">$501-$2000</span>
+            <span class="col s2 funding_legend_green">$2001-$5000</span>
+            <span class="col s2 funding_legend_blue">$5000+</span>
+          </div>
         </div>
-        <div class="row legend">
-          <span class="col s2 funding_legend_red">$0-500</span>
-          <span class="col s2 funding_legend_yellow">$501-$2000</span>
-          <span class="col s2 funding_legend_green">$2001-$5000</span>
-          <span class="col s2 funding_legend_blue">$5000+</span>
+        <div class="col s3 newsfeed">
+            
+              <ul >
+                <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a>
+                  <div class="row">
+                    <div class="col s2">
+                      <a class="locate" lat="{{ story.lat }}" lon="{{ story.lon }}" href="#/"><img class="locate_pin locate" lat="{{ story.lat }}" lon="{{ story.lon }}" src="../assets/locate_pin.png"></a>
+                    </div>
+                    <div class="col 10">
+                      {{story.group}} <br>{{ story.date }} <p></p>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+              
+           
         </div>
-        <div class="funding_legend_red">
-<!--           <span>Red: 0-$500, Blue: $501-$2000, Yellow: $2001-$5000, Green: $5001+</span> -->
         </div>
       </div>
       <div class="row">
@@ -130,10 +156,11 @@
   </div>
 
 
-  <div class="container">
+  <div class="container" ng-controller="mainController">
     <div class="section">
-
-      <!--   Icon Section   -->
+      <!-- newsfeed -->
+      
+     
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
@@ -206,5 +233,5 @@
       </div>
     </div>
   </footer>
-
+</div>
 
