@@ -42,13 +42,14 @@
 }
 
 .intro-section{
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 25%;
+    padding: 10px;
 }
 
 .team-summary{
     padding-top: 5px;
+    border-bottom: 1px solid #f6f6f6;
+    
 }
 
 .form{
@@ -61,4 +62,6 @@
 
 .numbers{
     font-size:150px;
+    color: #414042;
+    margin-left:5px;
 }

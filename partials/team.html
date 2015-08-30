@@ -1,40 +1,44 @@
 <div ng-controller="teamController">
     <!-- Team intro section includes team name, team pic, and overall team data-->
-    <div class="teamIntro #f5f5f5 grey lighten-4">
-        <div class="valign-wrapper intro-section">
-            <img class="team-pic circle" src="assets/teampic.png" alt="team pic">
+    <div class="teamIntro #f5f5f5 grey lighten-4 row offset-3">
+            <div class="valign-wrapper intro-section">
+                <img class="team-pic circle" src="assets/teampic.png" alt="team pic">
 
-            <div class="valign-wrapper" id="inner-wrapper">
-                <h1 class="team-name center-align"><span >Team Austin</span></h1>
-                <p class="center-align team-info"><strong>Founded:</strong> June 23, 2015 | <strong>President:</strong> Tom Anderson | <strong> Total Members: </strong> 23</p>
+                <div class="valign-wrapper" id="inner-wrapper">
+                    <h1 class="team-name center-align"><span >Team Austin</span></h1>
+                    <p class="center-align team-info"><strong>Founded:</strong> June 23, 2015 | <strong>President:</strong> Tom Anderson | <strong> Total Members: </strong> 12</p>
+                </div>
+
             </div>
-
-        </div>
     </div>
 
-    <div class="row">
-        <div class="col s4">
-           <p class="center-align"><i class="fa fa-user"></i><span class="numbers">4</span><span>MEMBERS</span></p>
+    <div class="row team-summary">
+        <p class="center-align"><strong>Summary:</strong> Hard working. Dedicated. We are a team looking for the best opportunties to provide others. Join us in our mission!</p>
+        <div class="col s3 offset-s1">
+            <div class="valign-wrapper member-count">
+                <i class="valign fa fa-user fa-4x red-text"></i>
+                <p class="valign"><span class="numbers">12</span></p>
+                <p class="valign">MEMBERS</p>
+            </div>
         </div>
-        <div class="col s4">
-            <p class="center-align"><i class="fa fa-odnoklassniki"></i>8</p>
+        <div class="valign-wrapper col s3 offset-1">
+            <i class="valign fa fa-odnoklassniki fa-4x red-text"></i>
+            <p class="valign"><span class="numbers">8</span></p>
+            <p class="valign">REFUGEE RESCUES</p>
         </div>
-        <div class="col s4">
-           <p class="center-align"><i class="fa fa-usd"></i>200</p>
+        <div class="valign-wrapper col s4">
+            <i class="valign fa fa-usd fa-4x red-text"></i>
+            <p class="valign"><span class="numbers">200</span>
+            <p class="valign">FUNDS RAISED THIS YEAR</p>
         </div>
-    </div>
-
-    <div class="summary #f5f5f5 grey lighten-4">
-            <h3 class="center-align team-summary">Team Summary</h3>
-            <p class="company-summary center-align">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
     </div>
 
     <div class="teamMessages">
             <h3 class="center-align">Messages</h3>
     
             <div id="message" ng-repeat="message in messages">
-                <h6 class="user-messages"> <strong>Title: </strong> {{message.title}} </h6>
-                <p class="user-messages"> <strong>{{ message.name }}</strong> posted on {{ message.date | date: "MMMM d, y"}}:</p>
+                <h6 class="user-messages"> <strong>Title: <i></strong> {{message.title}} </i></h6>
+                <p class="user-messages"><i> <strong>{{ message.name }}</strong> posted on {{ message.date | date: "MMMM d, y"}}:</i></p>
                 <p class="user-messages ind-message">{{ message.post }}</p>
             </div>
 
