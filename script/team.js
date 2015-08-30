@@ -1,28 +1,37 @@
 myApp.factory('teamFactory', function (){
 	factory = {}
-	messageboard = [{name:"Rod", title:"Hello?", date: new Date(), post:"New Content"}];
+	messageboard = [{name:"Rod", title:"Upcoming Activity", date: new Date(), post:"The upcoming event should be great!"}];
 	factory.teamChat = function(callback) {
 		callback(messageboard);
-	} 
+	}; 
 	factory.addChat = function(message){
 		messageboard.push(message);
-	}
+	};
 	return factory;
 });
 
 myApp.controller('teamController', function ($scope, teamFactory){
+	$scope.load = function (){
+		$('#submitMessage').click(function (){
+        	$('#messageConfirm').show('slow', 'linear', function (){
+        			setTimeout(function (){
+        				$('#messageConfirm').fadeOut('slow');
+        			}, 2000);
+        		});
+   			});
+		};
+
+	$scope.load();
+
 	messageboard();
 	function messageboard() {
-		console.log("dog");
 		teamFactory.teamChat(function(data){
 			$scope.messages = data;
-			console.log($scope);
-		})
+		});
 	}
-	console.log("Woof");
+
 	$scope.addMessage = function() {
 		var newdate = new Date();
-		console.log(newdate);
 		postdata = {
 			name: $scope.post.name,
 			title: $scope.post.title,
@@ -30,6 +39,8 @@ myApp.controller('teamController', function ($scope, teamFactory){
 			post: $scope.post.post
 		}
 		teamFactory.addChat(postdata);
+		$scope.post = ' ';
 
 	}
+
 });
