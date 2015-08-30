@@ -1,13 +1,24 @@
 myApp.factory('teamFactory', [function (){
 	factory = {}
-	// chatlog = [{name:, content:, comments: }];
-	// factory.teamChat = function() {
-
-	// } 
+	messageboard = [{poster:"Rod", title:"Hello?", post:"New Content"}];
+	factory.teamChat = function(callback) {
+		callback(messageboard);
+	} 
+	factory.addChat = function(message){
+		messageboard.push(message);
+	}
 	return factory;
 }]);
 
 myApp.controller('teamController', ['$scope', 'teamFactory', function ($scope, teamFactory){
+	messageboard();
+	function messageboard() {
+		teamFactory.teamChat(function(data){
+			$scope.messages = data;
+		})
+	}
 
-
+	$scope.addmessage = function() {
+		teamFactory
+	}
 }]);
