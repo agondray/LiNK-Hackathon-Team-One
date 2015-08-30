@@ -47,9 +47,14 @@
 }
 
 .team-summary{
+    
+    padding-bottom: 55px;
+}
+
+.team-numbers{
     padding-top: 5px;
     border-bottom: 1px solid #f6f6f6;
-    
+    padding-bottom: 55px;
 }
 
 .form{
