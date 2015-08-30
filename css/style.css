@@ -33,11 +33,41 @@ li {
 .link-background-color {
   background-color: #DF3926;
 }
-
+.legend {
+  position:relative;
+  left:10px;
+}
+.funding_legend_red {
+  background-color: #FD7567;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
+.funding_legend_yellow {
+  background-color: #fdf569;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
+.funding_legend_green {
+  background-color: #00E64D;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
+.funding_legend_blue {
+  background-color: #6992FD;
+  opacity: 0.7;
+  position:relative;
+  top:-50px;
+}
 .logo {
   max-height:50px;
 }
+.locate_pin {
+  max-width:25px;
 
+}
 .team_name {
   background-color:#DF3926;
   color:white;
@@ -54,7 +84,13 @@ span .team_raised {
   padding:2px;
 }
 
-#pointers_map{
+#pointers_map {
   height:400px;
-
 }
+.funding_legend {
+  background-color: #DF3926;
+  opacity: 0.9;
+  position:relative;
+  top:-50px;
+}
+

@@ -13,11 +13,26 @@
     },
     panControl : false,
   });
+
+   GMaps.geolocate({
+    success: function(position){
+      map.setCenter(position.coords.latitude, position.coords.longitude);
+
+    },
+    error: function(error){
+      alert('Geolocation failed: '+error.message);
+    },
+    not_supported: function(){
+      alert("Your browser does not support geolocation");
+    }
+  });
+
+
     map.addMarker({
       lat: 37.376818,
       lng: -121.912378,
       title: 'CodingDojo LINK',
-      icon:'../assets/red-dot.png',
+      icon:'../assets/yellow-dot.png',
       infoWindow: {
         content: '<img class="logo" src="http://cdn.skilledup.com/wp-content/uploads/2015/01/Coding-Dogo-logo.jpg"><span class="team_name">CodingDojo Link<br>Raised <span class="team_raised">$280</span></span><p>Contact: Michael Choi</p><p>Email: mchoi@codingdojo.com</p><p>Website: <a href="www.codingdojo.com">www.codingdojo.com</a>'
       }
@@ -27,7 +42,7 @@
       lat: 37.334906,
       lng: -121.884552,
       title: 'SJSU LINK',
-      icon:'../assets/blue-dot.png',
+      icon:'../assets/green-dot.png',
       infoWindow: {
         content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p>Website: <a href="www.sjsu.com">www.sjsu-link.com</a>'
       }
@@ -53,13 +68,30 @@
     map.addMarker({
       lat: 30.291698,
       lng: -97.737750,
-      title: 'UT Austin LINK',
+      title: 'UT',
       icon:'../assets/green-dot.png',
       infoWindow: {
         content: '<img class="logo" src="https://www.utexas.edu/sites/default/files/images/Trademarked_Silhouette2.jpg"><span class="team_name">UT Austin Link<br>Raised <span class="team_raised">$10,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@utaustin.edu</p><p>Website: <a href="www.sjsu.com">www.utaustin-link.com</a>'
       }
     });
+
+    $(".locate").on('click', function() {
+      console.log("hello");
+    })
+
+    // $(".locate").click(function() {
+    //   console.log("working");
+    //   var lon = $(this).attr("lon");
+    //   var lat = $(this).attr("lat");
+    //   console.log(lon)
+    //   map.setCenter(lat, lon);
+    // });
+    // $("#locate").click(function() {
+    //   map.setCenter(30.291698, -97.737750);
+    // });
 });
+
+
 </script>
 <div ng-controller="mainController">
   <nav class="link-background-color" role="navigation">
@@ -82,21 +114,40 @@
         <h5 class="header col s12 light">Map of LINK Rescue Teams</h5>
       </div>
       <div class="row center">
-        <div class="col s8">
-          <div id="pointers_map"></div>
+        <div class="col s9">
+          <div id="pointers_map">
+          </div>
+          <div class="row legend">
+            <span class="col s2 funding_legend_red">$0-500</span>
+            <span class="col s2 funding_legend_yellow">$501-$2000</span>
+            <span class="col s2 funding_legend_green">$2001-$5000</span>
+            <span class="col s2 funding_legend_blue">$5000+</span>
+          </div>
         </div>
-        <div class="col s4 newsfeed">
+        <div class="col s3 newsfeed">
             
               <ul >
-                <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a> - {{ story.date }} <p></p></li>
+                <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a>
+                  <div class="row">
+                    <div class="col s2">
+                      <a class="locate" lat="{{ story.lat }}" lon="{{ story.lon }}" href="#/"><img class="locate_pin locate" lat="{{ story.lat }}" lon="{{ story.lon }}" src="../assets/locate_pin.png"></a>
+                    </div>
+                    <div class="col 10">
+                      {{story.group}} <br>{{ story.date }} <p></p>
+                    </div>
+                  </div>
+
+                </li>
               </ul>
               
            
         </div>
-
+        </div>
       </div>
       <div class="row">
         <div class="col s3">
+          <a id="locate" href="#/"><img class="locate_pin" src="../assets/locate_pin.png"></a>
+          <span>UT Austin</span>
           <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Start a Rescue Team</a>
         </div>
       <br><br>
