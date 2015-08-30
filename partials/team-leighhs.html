@@ -1,0 +1,166 @@
+<script>
+    $(function () {
+        $('#members').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Fruit Consumption'
+            },
+            xAxis: {
+                categories: ['Apples', 'Bananas', 'Oranges']
+            },
+            yAxis: {
+                title: {
+                    text: 'Fruit eaten'
+                }
+            },
+            series: [{
+                name: 'Jane',
+                data: [1, 0, 4]
+            }, {
+                name: 'John',
+                data: [5, 7, 3]
+            }]
+        });
+    }); 
+
+    $(function () {
+    $('#money').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+}); 
+
+ $(function () {
+    $('#rescues').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+}); 
+</script>
+
+<div ng-controller="teamController">
+    <!-- Team intro section includes team name, team pic, and overall team data-->
+    <div class="teamIntro #f5f5f5 grey lighten-4">
+        <div class="valign-wrapper intro-section">
+            <img class="team-pic circle" src="assets/teampic.png" alt="team pic">
+
+            <div class="valign-wrapper" id="inner-wrapper">
+                <h1 class="team-name center-align"><span >Team Leigh High School</span></h1>
+                <p class="center-align team-info"><strong>Founded:</strong> June 20, 2015 | <strong>President:</strong> Tina Tran | <strong> Total Members: </strong> 12</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s4">
+           <p class="center-align"><i class="fa fa-user"></i><span class="numbers">4</span><span>MEMBERS</span></p>
+        </div>
+        <div class="col s4">
+            <p class="center-align"><i class="fa fa-odnoklassniki"></i>12</p>
+        </div>
+        <div class="col s4">
+           <p class="center-align"><i class="fa fa-usd"></i>200</p>
+        </div>
+    </div>
+
+    <div class="summary #f5f5f5 grey lighten-4">
+            <h3 class="center-align team-summary">Team Summary</h3>
+            <p class="company-summary center-align">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. ,</p>
+    </div>
+
+    <div class="teamMessages">
+            <h3 class="center-align">Messages</h3>
+    
+            <div id="message" ng-repeat="message in messages">
+                <h6 class="user-messages"> <strong>Title: </strong> {{message.title}} </h6>
+                <p class="user-messages"> <strong>{{ message.name }}</strong> posted on {{ message.date | date: "MMMM d, y"}}:</p>
+                <p class="user-messages ind-message">{{ message.post }}</p>
+            </div>
+
+    </div>
+
+    <p class="red-text" style="display:none" id="messageConfirm">Thanks for posting!</p>
+
+    <div class="form">
+            <div class="row">
+                    <div class="input-field col s6">
+                        <input id="name" type="text" ng-model="post.name">
+                        <label for="name">Name</label>
+                    </div>  
+            </div>
+        
+       
+            <div class="row">
+                    <div class="input-field col s6">
+                        <input id="title" type="text"  ng-model="post.title">
+                        <label for="title">Title</label>
+                     </div>
+            </div> 
+       
+   
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea id="textarea1" class="materialize-textarea" ng-model="post.post"></textarea>
+                    <label for="textarea1">Post</label>
+                </div>
+            </div>
+
+        <button class="btn waves-effect waves-light" id="submitMessage" type="submit" name="action" ng-click="addMessage()" >Post Message
+            <i class="material-icons"> send</i>
+        </button>
+    </div>
+
+    <div class="meet-team #f5f5f5 grey lighten-4">
+        <h3 class="center-align">Our Current Team</h3>
+        <div class="row">
+            <div class="col s4">
+                <img class="circle center-align" src="assets/student1.png" alt="user pic"/>
+                <p class="center-align">Jason Jones</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+   

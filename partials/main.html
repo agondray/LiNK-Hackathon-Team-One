@@ -146,7 +146,7 @@
       title: 'CodingDojo LINK',
       icon:'../assets/yellow-dot.png',
       infoWindow: {
-        content: '<img class="logo" src="http://cdn.skilledup.com/wp-content/uploads/2015/01/Coding-Dogo-logo.jpg"><span class="team_name">CodingDojo Link<br>Raised <span class="team_raised">$280</span></span><p>Contact: Michael Choi</p><p>Email: mchoi@codingdojo.com</p><p>Website: <a href="www.codingdojo.com">www.codingdojo.com</a>'
+        content: '<img class="logo" src="http://cdn.skilledup.com/wp-content/uploads/2015/01/Coding-Dogo-logo.jpg"><span ng-model="theTeam.teamName" class="team_name">CodingDojo Link<br>Raised <span class="team_raised">$280</span></span><p>Contact: Michael Choi</p><p>Email: mchoi@codingdojo.com</p><p>Website: <a href="#/team-codingDojo">View team page</button>'
       }
     });
 
@@ -156,7 +156,7 @@
       title: 'SJSU LINK',
       icon:'../assets/green-dot.png',
       infoWindow: {
-        content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p><a href="#/team">Team SJSU</a>'
+        content: '<img class="logo" src="http://san-jose-state-university-san-jose-california.runnerspace.com/members/images/4/26196_full.jpg"><span class="team_name">SJSU Link<br>Raised <span class="team_raised">$3,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@sjsu.edu</p><p>Website: <a href="#/team-sjsu">View team page</a>'
       }
     });
     map.addMarker({
@@ -165,7 +165,7 @@
       title: 'Stanford LINK',
       icon:'../assets/green-dot.png',
       infoWindow: {
-        content: '<img class="logo" src="https://yt3.ggpht.com/-Y8D6Fg-k6qc/AAAAAAAAAAI/AAAAAAAAAAA/9lU8yzk8H14/s900-c-k-no/photo.jpg"><span class="team_name">Stanford Link<br>Raised <span class="team_raised">$5,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@stanford.edu</p><p>Website: <a href="www.sjsu.com">www.stanford-link.com</a>'
+        content: '<img class="logo" src="https://yt3.ggpht.com/-Y8D6Fg-k6qc/AAAAAAAAAAI/AAAAAAAAAAA/9lU8yzk8H14/s900-c-k-no/photo.jpg"><span class="team_name">Stanford Link<br>Raised <span class="team_raised">$5,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@stanford.edu</p><p>Website: <a href="#/team-stanford">View team page</a>'
       }
     });
     map.addMarker({
@@ -174,7 +174,7 @@
       title: 'Leigh HS LINK',
       icon:'../assets/red-dot.png',
       infoWindow: {
-        content: '<img class="logo" src="http://images.maxpreps.com.edgesuite.net/Mascot/AAAAAAAAAAAAAAAAAAAAAA/6GJmve6iykWw6N0D3sAFyQ/1,210,89/1423252879_leigh_longhorns.gif"><span class="team_name">Leigh HS Link<br>Raised <span class="team_raised">$600</span></span><p>Contact: John Doe</p><p>Email: johndoe@gmail.com</p><p>Website: <a href="www.sjsu.com">www.leigh-hs-link.com</a>'
+        content: '<img class="logo" src="http://images.maxpreps.com.edgesuite.net/Mascot/AAAAAAAAAAAAAAAAAAAAAA/6GJmve6iykWw6N0D3sAFyQ/1,210,89/1423252879_leigh_longhorns.gif"><span class="team_name">Leigh HS Link<br>Raised <span class="team_raised">$600</span></span><p>Contact: John Doe</p><p>Email: johndoe@gmail.com</p><p>Website: <a href="#/team-leighhs">View Team Page</a>'
       }
     });
     map.addMarker({
@@ -183,7 +183,7 @@
       title: 'UT',
       icon:'../assets/green-dot.png',
       infoWindow: {
-        content: '<img class="logo" src="https://www.utexas.edu/sites/default/files/images/Trademarked_Silhouette2.jpg"><span class="team_name">UT Austin Link<br>Raised <span class="team_raised">$10,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@utaustin.edu</p><p>Website: <a href="www.sjsu.com">www.utaustin-link.com</a>'
+        content: '<img class="logo" src="https://www.utexas.edu/sites/default/files/images/Trademarked_Silhouette2.jpg"><span class="team_name">UT Austin Link<br>Raised <span class="team_raised">$10,200</span></span><p>Contact: John Doe</p><p>Email: johndoe@utaustin.edu</p><p>Website: <a href="#/team">View team page</a>'
       }
     });
 
@@ -191,17 +191,18 @@
       console.log("hello");
     })
 
-    $("img .locate").click(function() {
-      console.log("working");
-      var lon = $("this").attr("lon");
-      var lat = $(this).attr("lat");
-      console.log(lon)
-      map.setCenter(lat, lon);
-    });
-    $("#locate").click(function() {
-      map.setCenter(30.291698, -97.737750);
-    });
+    // $(".locate").click(function() {
+    //   console.log("working");
+    //   var lon = $(this).attr("lon");
+    //   var lat = $(this).attr("lat");
+    //   console.log(lon)
+    //   map.setCenter(lat, lon);
+    // });
+    // $("#locate").click(function() {
+    //   map.setCenter(30.291698, -97.737750);
+    // });
 });
+
 </script>
 
 <div ng-controller="mainController">

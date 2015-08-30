@@ -22,6 +22,7 @@
      <script src="script/login.js"></script>
      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
      <script src="script/gmaps.js"></script>
+     <script src="script/jQuery.js"></script>
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -32,17 +33,14 @@
         <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo left">LiNK</a>
             <ul class="right hide-on-med-and-down right">
                 <li>
-                    <my-user-login>
-                        <a id="dropdown-login" href="#/">Member Login</a>
-                        <ul id="login-form">
-                            <li id="loginForm">
-                                <input type="text" ng-model="memberLogin.username" placeholder="Username">
-                                <input type="password" ng-model="memberLogin.password" placeholder="Password">
-                                <button id="loginButton" class="waves-effect waves-light btn" ng-click="login()">Login</button>
-                            </li>
-                        </ul>
-                        <a href="#/" id="loggedInUser">Admin</a>
-                    </my-user-login>
+                    <a id="dropdown-login" href="#/">Member Login</a>
+                    <ul id="login-form">
+                        <li>
+                            <input type="text" ng-model="memberLogin.username" placeholder="Username">
+                            <input type="password" ng-model="memberLogin.password" placeholder="Password">
+                            <button class="waves-effect waves-light btn" ng-click="login()">Login</button>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#/">Home</a>
