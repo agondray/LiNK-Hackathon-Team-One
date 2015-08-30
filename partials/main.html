@@ -9,7 +9,7 @@
                 text: 'Worldwide Rescue Teams'
             },
             xAxis: {
-                categories: ['U.S.A.', 'South Korea', 'Japan', 'U.K.', 'others']
+                categories: ['U.S.A.', 'Canada', 'South Korea', 'U.K.', 'others']
             },
             yAxis: {
                 title: {
@@ -19,7 +19,7 @@
             series: [{
                 showInLegend: false,
                 name: 'team count',
-                data: [89, 52, 38, 35, 56]
+                data: [270, 20, 12, 10, 19]
             }],
             plotOptions: {
               series: {
@@ -46,7 +46,7 @@
         yAxis: [
             { // primary yAxis
               min: 0,
-              max: 300,
+              max: 150,
               labels: {
                 format: '${value}k',                
                 style: {
@@ -62,7 +62,7 @@
             }, 
             { // secondary yAxis
               min: 0,
-              max: 100,
+              max: 150,
               labels: {
                 format: '{value}',
                 style: {
@@ -86,14 +86,14 @@
           align: 'left',
           x: 75,
           verticalAlign: 'top',
-          y: 30,
+          y: 50,
           floating: true
         },
         series: [
         {
             yAxis: 0,
             name: 'funds raised',
-            data: [179, 224, 248],
+            data: [95, 100, 150],
             tooltip: {
               valuePrefix: '$',
               valueSuffix: 'k'
@@ -101,7 +101,7 @@
               color: chartColors['black']
         }, {
             yAxis: 1,
-            name: 'refugees rescued',
+            name: 'rescues',
             data: [17, 23, 25],
               color: chartColors['red']
         }]
@@ -226,8 +226,8 @@
 
 
       <div class="row center">
-        <h5 class="header col s8 light">Nearby Rescue Teams</h5>
-        <h5 class="header col s4 light">Blog</h5>
+        <h5 class="header col s8 light">NEARBY RESCUE TEAMS</h5>
+        <h5 class="header col s4 light">BLOG</h5>
       </div>
       <div class="row center">
         <div class="col s8">
@@ -241,17 +241,18 @@
           </div>
         </div>
         <div class="col s4 newsfeed">
-            
+                        <i class="tiny material-icons" alt="perm_identity">perm_identity</i>
+            <i class="tiny material-icons">settings_voice</i>
+            <i class="tiny material-icons">subject</i>
+            <i class="tiny material-icons">visibility</i>
+            <i class="tiny material-icons">assignment</i>
+            <i class="tiny material-icons">settings_power</i>
+            <i class="tiny material-icons">new_releases</i>
               <ul >
                 <li ng-repeat= "story in news"><i class="tiny material-icons">{{ story.categoryimg}}</i><a href="{{ story.link }}" target="_blank">{{ story.title }} </a>
-                  <div class="row">
-                    <div class="col s2">
-                      <a class="locate" lat="{{ story.lat }}" lon="{{ story.lon }}" href="#/"><img class="locate_pin locate" lat="{{ story.lat }}" lon="{{ story.lon }}" src="../assets/locate_pin.png"></a>
-                    </div>
-                    <div class="col 10">
-                      <em>{{story.group}}, {{ story.date }}</em>
-                    </div>
-                  </div>
+
+                      <p>{{story.group}}, {{ story.date }}</p>
+                      <a class="locate" lat="{{ story.lat }}" lon="{{ story.lon }}" href="#/"><img class="locate_pin locate" lat="{{ story.lat }}" lon="{{ story.lon }}" src="../assets/locate_pin.png" height="20px"></a>
 
                 </li>
               </ul>
@@ -260,13 +261,7 @@
         </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col s3">
-          <a id="locate" href="#/"><img class="locate_pin" src="../assets/locate_pin.png"></a>
-          <span>UT Austin</span>
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Start a Rescue Team</a>
-        </div>
-      <br><br>
+
 
     </div>
   </div>
@@ -277,33 +272,7 @@
       <!-- newsfeed -->
       
      
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
+ 
       </div>
 
     </div>
